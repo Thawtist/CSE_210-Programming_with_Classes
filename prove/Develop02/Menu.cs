@@ -1,0 +1,35 @@
+
+using System.ComponentModel.DataAnnotations;
+
+class Menu
+{
+    public string[] _menuStrings = {
+        "Welcome to the Journal Program",
+        "Create, Display, Save, and Load Journal Entries",
+        "1 - Create Journal Entry",
+        "2 - Display Journal",
+        "3 - Save Journal to file",
+        "4 - Read Journal from file",
+        "5 - Quit"
+    };
+
+    public int ProcessMenu()
+    {
+        int userResponse = 0;
+
+        do{
+            Console.Clear();
+            foreach(string line in _menuStrings)
+            {
+                Console.WriteLine(line);
+            }
+            userResponse = int.Parse(Console.ReadLine());
+        } while(userResponse < 1 || userResponse > 5);
+
+        return userResponse;
+    }
+
+}
+
+// _menuStrings;string[]
+// ProcessMenu():int
