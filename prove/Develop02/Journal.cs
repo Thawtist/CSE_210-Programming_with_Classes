@@ -9,12 +9,32 @@ using System.Security.Cryptography;
 
 class Journal
 {
+    private List<JournalEntry> _entries;
+
+    public Journal()
+    {
+        _entries = [];
+    }
+
+    public void AddEntry(JournalEntry entry)
+    {
+        _entries.Add(entry);
+    }
+
+    public void Display()
+    {
+        foreach (JournalEntry entry in _entries)
+        {
+            entry.DisplayEntry();
+        }
+    }
+
     
     public void WriteToFile(string filename)
     {
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            foreach(JournalEntry entry in entries)
+            foreach(JournalEntry entry in _entries)
             {
                 outputFile.WriteLine(entry.CreateFileSystemString());
             }
@@ -32,7 +52,7 @@ class Journal
             string date = parts[0];
             string question = parts[1];
             string entryText = parts[2];
-​
+
             JournalEntry entry = new JournalEntry();
             entry.CreateEntryWithData(date, question, entryText);    
             this.AddEntry(entry);
