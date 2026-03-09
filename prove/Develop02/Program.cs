@@ -13,18 +13,18 @@ class Program
             switch (userResponse)
             {
                 case 1:
-                // TODO Create new Journal Entry
-                // TODO Add entry to list of journal entries
-                break;
+                    // TODO Create new Journal Entry
+                    // TODO Add entry to list of journal entries
+                    break;
                 case 2:
-                // TODO Display Journal Entries
-                break;
+                    // TODO Display Journal Entries
+                    break;
                 case 3:
-                // TODO Save journal to file
-                break;
+                    // TODO Save journal to file
+                    break;
                 case 4:
-                // TODO Load journal from file
-                break;
+                    // TODO Load journal from file
+                    break;
                 case 5:
                     done = true;
                     break;

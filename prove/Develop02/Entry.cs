@@ -9,9 +9,22 @@
 
 class Entry
 {
-    // public string _date;
-    // public string _prompt;
-    // public string _response;
+    public string _date;
+    public string _prompt;
+    public string _response;
+
+
+    public string CreateFileSystemString()
+    {
+        string outputString = "";
+
+        outputString = $"{_date}#{_entryQuestion}#{_journalEntry}";
+
+        return outputString;
+    }
+
+
+
 
 
     // public void setDate()
