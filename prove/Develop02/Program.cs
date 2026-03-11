@@ -38,6 +38,8 @@ class Program
                 case 2:
                     // TODO Display Journal Entries
                     newJournal.Display();
+                    Console.WriteLine("Press Enter to continue...");
+                    Console.ReadLine();
                     break;
                 case 3:
                     // TODO Save journal to file
