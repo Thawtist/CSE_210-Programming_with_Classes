@@ -25,7 +25,7 @@ class JournalEntry
 
     public JournalEntry(string date, string entryQuestion, string journalEntry)
     {
-        // TODO Missing something here probably the date, something like _date = date
+        _date = date;
         _entryQuestion = entryQuestion;
         _journalEntry = journalEntry;
         _journalQuestions = new JournalQuestions();
@@ -48,7 +48,7 @@ class JournalEntry
         Console.Write("> ");
         string journalEntry = Console.ReadLine();
 
-        DateTime = theCurrentTime = DateTime.Now;
+        DateTime theCurrentTime = DateTime.Now;
 
         this._date = theCurrentTime.ToShortDateString();
         this._entryQuestion = question;
@@ -63,7 +63,12 @@ class JournalEntry
     }
 
 
-
+    public void DisplayEntry()
+    {
+        Console.WriteLine($"{_date} - {_entryQuestion}");
+        Console.WriteLine(_journalEntry);
+        Console.WriteLine();
+    }
 
 
 

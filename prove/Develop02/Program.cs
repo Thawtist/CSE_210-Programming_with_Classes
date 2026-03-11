@@ -41,11 +41,13 @@ class Program
                     break;
                 case 3:
                     // TODO Save journal to file
-                    fileName = ObtainFileName("File Name from which to read Journal: ");
-                    newJournal.ReadFromFile(fileName);
+                    fileName = ObtainFileName("Enter file name of where to save Journal: ");
+                    newJournal.WriteToFile(fileName);
                     break;
                 case 4:
                     // TODO Load journal from file
+                    fileName = ObtainFileName("File Name from which to read Journal: ");
+                    newJournal.ReadFromFile(fileName);
                     break;
                 case 5:
                     // done = true;

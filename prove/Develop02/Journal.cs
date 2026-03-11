@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using System.Security.Cryptography;
+using System.Collections.Generic;
 
 
 
@@ -13,7 +14,7 @@ class Journal
 
     public Journal()
     {
-        _entries = [];
+        _entries = new List<JournalEntry>();
     }
 
     public void AddEntry(JournalEntry entry)
@@ -43,6 +44,8 @@ class Journal
 
     public void ReadFromFile(string filename)
     {
+        _entries.Clear();
+
         string[] lines = System.IO.File.ReadAllLines(filename);
 
         foreach (string line in lines)
