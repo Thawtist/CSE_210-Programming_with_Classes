@@ -1,7 +1,10 @@
 
+
+
+
 class Circle
 {
-    public double _radius;
+    private double _radius;
 
     public double GetRadius()
     {
@@ -10,7 +13,14 @@ class Circle
 
     public void SetRadius(double radius)
     {
-        _radius = radius;
+        if(radius < 0)
+        {
+            Console.WriteLine("Invalid Radius, must be a positive value.");
+            _radius = 0;
+            // return;
+        }
+        else
+            _radius = radius;
     }
 
     public double GetArea()
