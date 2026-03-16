@@ -14,9 +14,17 @@ class Scripture
         
     }
 
-    public void isCompleatlyHidden()
+    public void isCompletelyHidden()
     {
-        
+        for word in scripture:
+            if (_hidden == false)
+        {
+                return false;
+        }
+            else
+            {
+                next
+            }
     }
 
     public void IsScripture(List, Scripture, Reference, Reference)
