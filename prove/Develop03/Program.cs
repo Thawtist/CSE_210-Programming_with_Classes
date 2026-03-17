@@ -11,11 +11,13 @@ class Program
         Scripture sr1 = new Scripture("John", 3, 16, "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.");
         Scripture sr2 = new Scripture("Ether", 12, 27, "And if men come unto me I will show unto them their weakness. I give unto men weakness that they may be humble; and my grace is sufficient for all men that humble themselves before me; for if they humble themselves before me; and have faith in me; then will I make weak things become strong unto them. ");
         Scripture sr3 = new Scripture("Proverbs", 3, 5, 6, "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
+        Scripture sr4 = new Scripture("Mosiah", 2, 17, "And behold; I tell you these things that ye may learn wisdom; that ye may learn that when ye are in the service of your fellow beings ye are only in the service of your God.");
 
         scriptures.Add(sr);
         scriptures.Add(sr1);
         scriptures.Add(sr2);
         scriptures.Add(sr3);
+        scriptures.Add(sr4);
 
         int count = 1;
         Console.Clear();
