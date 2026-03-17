@@ -48,6 +48,6 @@ class Word
 
     public void DisplayWord()
     {
-        Console.WriteLine($"{GetWordString()}");
+        Console.Write($"{GetWordString()}");
     }
 }
