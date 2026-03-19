@@ -7,9 +7,19 @@ class Program
         BaseActivity baseActivity = new BaseActivity("Breathing",
             "This activity will help you relax with breathing exercises");
 
-        baseActivity.DisplayGreeting();
-        baseActivity.DisplayDescription();
+        BreathingActivity breathingActivity = new BreathingActivity("Breathing",
+            "This activity will help you relax with breathing exercises");
 
-        baseActivity.DisplaySpinner("Hey Bob", 5);
+        // baseActivity.DisplayGreeting();
+        // baseActivity.DisplayDescription();
+
+        // baseActivity.DisplaySpinner("Hey Bob", 5);
+
+        // breathingActivity.DisplayGreeting();
+        // breathingActivity.DisplayDescription();
+        // breathingActivity.ObtainDuration();
+        // breathingActivity.DisplaySpinner("Hey Bob", 4);
+
+        breathingActivity.RunActivity();
     }
 }

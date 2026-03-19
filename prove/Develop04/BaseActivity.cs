@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 class BaseActivity
 {
     private string _name;
@@ -16,6 +17,7 @@ class BaseActivity
 
     public void DisplayGreeting()
     {
+        Console.Clear();
         Console.WriteLine($"Welcome to the {_name} Activity");
     }
 
@@ -33,7 +35,7 @@ class BaseActivity
         int index = 0;
 
         Console.CursorVisible = false;
-        Console.Clear();
+        // Console.Clear();
 
         Console.Write($"{message} ");
 
@@ -46,6 +48,33 @@ class BaseActivity
 
 
         Console.CursorVisible = true;
+    }
+
+    public void DisplayEnding()
+    {
+        
+    }
+
+    public void RunCountDown(string message, int seconds)
+    {
+
+    }
+
+    public void StartTimer()
+    {
+        
+    }
+
+    public bool HasTimerExpired()
+    {
+        return false; // TODO Return true if the timer has expired
+    }
+
+    public void ObtainDuration()
+    {
+        Console.WriteLine("How long, in seconds, would you like to do this activity?");
+        Console.Write("> ");
+        _duration = int.Parse(Console.ReadLine());
     }
 
 }
