@@ -43,7 +43,7 @@ class Program
             Console.WriteLine("Enter 'q' to quit, press enter to remove words: ");
 
             scriptures[selectedScripture].ShowScripture();
-            finished = scriptures[selectedScripture].HideSome_Words();
+            finished = scriptures[selectedScripture].HideSomeWords();
             if(!finished)
             {
                 input = Console.ReadLine();

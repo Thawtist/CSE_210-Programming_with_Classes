@@ -1,9 +1,8 @@
 using System;
-using System.Diagnostics;
 
 class Word
 {
-    public string _word;
+    private string _word;
     private bool _hidden;
 
     public Word(string word)
@@ -12,42 +11,41 @@ class Word
         _hidden = false;
     }
 
-
+    // Read-only access to the word (optional, if needed)
+    public string GetWord()
+    {
+        return _word;
+    }
 
     public bool IsHidden()
     {
         return _hidden;
     }
 
+    public void Hide()
+    {
+        _hidden = true;
+    }
+
     public void Show()
     {
-        
+        _hidden = false;
     }
 
-    public void HideWord(bool hidden = true)
+    public string GetDisplayText()
     {
-        _hidden = hidden;
-    }
-
-    public string GetWordString()
-    {
-        string tempString = "";
-        if (!IsHidden())
+        if (!_hidden)
         {
-            tempString = _word;
+            return _word;
         }
         else
         {
-            for (int i = 0; i < _word.Length; i++)
-            {
-                tempString += "_";
-            }
+            return new string('_', _word.Length);
         }
-        return tempString;
     }
 
     public void DisplayWord()
     {
-        Console.Write($"{GetWordString()}");
+        Console.Write(GetDisplayText());
     }
 }

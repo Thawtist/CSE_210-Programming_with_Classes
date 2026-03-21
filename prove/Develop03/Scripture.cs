@@ -1,6 +1,5 @@
 using System;
-using System.ComponentModel;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
 
 class Scripture
 {
@@ -25,7 +24,7 @@ class Scripture
         _words = ConvertToWords(text);
     }
 
-    public int NumberOfUnhidden_words()
+    public int NumberOfUnhiddenWords()
     {
         int count = 0;
         foreach (Word word in _words)
@@ -41,44 +40,47 @@ class Scripture
     private List<Word> ConvertToWords(string text)
     {
         List<Word> words = new List<Word>();
-        foreach(string wword in text.Split(' '))
+        foreach (string wword in text.Split(' '))
         {
             Word tempWord = new Word(wword);
             words.Add(tempWord);
-            tempWord.HideWord(false);
         }
         return words;
-        }
+    }
 
-    public bool HideSome_Words()
+    public bool HideSomeWords()
     {
-        int numberOfRemaining_words = NumberOfUnhidden_words();
-        if (numberOfRemaining_words <= 0)
+        int remaining = NumberOfUnhiddenWords();
+
+        if (remaining <= 0)
         {
             return true;
         }
-        else if (numberOfRemaining_words <= 3)
+        else if (remaining <= 3)
         {
-            foreach(Word word in _words)
+            foreach (Word word in _words)
             {
-                word.HideWord();
+                word.Hide();
             }
             return true;
         }
         else
         {
-            int _wordsHidden = 0;
+            int wordsHidden = 0;
             Random rn = new Random();
-            while(_wordsHidden < 3)
+
+            while (wordsHidden < 3)
             {
-                int randomNumber = rn.Next(0, _words.Count);
-                if (!_words[randomNumber].IsHidden())
+                int randomIndex = rn.Next(0, _words.Count);
+
+                if (!_words[randomIndex].IsHidden())
                 {
-                    _words[randomNumber].HideWord();
-                    _wordsHidden++;
+                    _words[randomIndex].Hide();
+                    wordsHidden++;
                 }
             }
         }
+
         return false;
     }
 
@@ -96,10 +98,4 @@ class Scripture
     {
         return _reference.GetScriptureReference();
     }
-
-
-
-
-
-
 }
