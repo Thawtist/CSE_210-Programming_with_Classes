@@ -9,8 +9,13 @@ class Doctor : Person
         _tools = tools;
     }
 
-    public string GetDoctorInformation()
+    // public string GetDoctorInformation()
+    // {
+    //     return $"Tools: {_tools}, {GetPersonInformation()}";
+    // }
+
+        public override string GetPersonInformation()
     {
-        return $"Tools: {_tools}, {GetPersonInformation()}";
+        return $"Tools: {_tools}, {base.GetPersonInformation()}";
     }
 }
