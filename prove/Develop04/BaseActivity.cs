@@ -17,7 +17,7 @@ class BaseActivity
 
     public void DisplayGreeting()
     {
-        Console.Clear();
+        // Console.Clear();
         Console.WriteLine($"Welcome to the {_name} Activity");
     }
 
@@ -26,55 +26,133 @@ class BaseActivity
         Console.WriteLine(_description);
     }
 
-    public void DisplaySpinner(string message, int seconds)
+    public void DisplaySpinner(string Message, int seconds)
     {
-        DateTime currentTime = DateTime.Now;
-        DateTime endTime = currentTime.AddSeconds(seconds);
-        int sleepTime = 100; // This is in milliseconds
-        string animationString = "-\\|/"; // The double backslash is just one character
+        // DateTime currentTime = DateTime.Now;
+        // DateTime endTime = currentTime.AddSeconds(seconds);
+        // int sleepTime = 100; // This is in milliseconds
+        // string animationString = "-\\|/"; // The double backslash is just one character
+        // int index = 0;
+
+        // Console.CursorVisible = false;
+        // // Console.Clear();
+
+        // Console.Write($"{Message} ");
+
+        // while(DateTime.Now < endTime)
+        // {
+        //     Console.Write(animationString[index++ % animationString.Length]);
+        //     Thread.Sleep(sleepTime);
+        //     Console.Write("\b");
+        // }
+
+
+        // Console.CursorVisible = true;
+        
+        int countDown = seconds * 1000;
         int index = 0;
-
-        Console.CursorVisible = false;
-        // Console.Clear();
-
-        Console.Write($"{message} ");
-
-        while(DateTime.Now < endTime)
+        int sleepTime = 100; // This is in milliseconds
+        Console.Write(Message);
+        string spinner = "-\\|/";
+        while (countDown > 0)
         {
-            Console.Write(animationString[index++ % animationString.Length]);
-            Thread.Sleep(sleepTime);
+            Console.Write($"{spinner[index]}");
             Console.Write("\b");
+            Thread.Sleep(sleepTime);
+            countDown -= sleepTime;
+            index++;
+            index %= spinner.Length;
         }
 
-
-        Console.CursorVisible = true;
     }
 
     public void DisplayEnding()
     {
-        
+        DisplaySpinner("\n\nWell done!", 2);
+        DisplaySpinner($"You have completed {_duration} seconds of the {_name} Activity", 3);
     }
 
-    public void RunCountDown(string message, int seconds)
+    public void RunCountDown(string Message, int seconds)
     {
-
+        int countDown = seconds;
+        Console.Write(Message);
+        while (countDown > 0)
+        {
+            Console.Write($"{countDown}");
+            if (countDown >= 9)
+                Console.Write("\b\b  \b\b");
+            else
+                Console.Write("\b");
+            Thread.Sleep(1000);
+            countDown -= 1;
+        
+        }
     }
 
     public void StartTimer()
     {
-        
+        _endTime = DateTime.Now.AddSeconds(_duration);
     }
 
     public bool HasTimerExpired()
     {
-        return false; // TODO Return true if the timer has expired
+        return DateTime.Now > _endTime;
     }
 
     public void ObtainDuration()
     {
         Console.WriteLine("How long, in seconds, would you like to do this activity?");
-        Console.Write("> ");
-        _duration = int.Parse(Console.ReadLine());
+        bool receivedCorrectInput = false;
+
+        while (!receivedCorrectInput)
+        {
+            try
+            {
+                _duration = int.Parse(Console.ReadLine());
+                if (_duration <= 0)
+                {
+                    throw new Exception("Must be a positive number.");
+                }
+                receivedCorrectInput = true;
+                Console.WriteLine();
+            }
+            catch
+            {
+                Console.WriteLine("Input must be a positive number.");
+            }
+        }
+        // Console.Write("> ");
+        // _duration = int.Parse(Console.ReadLine());
     }
+
+    public string GetPromptString(List<FlaggedString> strings)
+    {
+        var random = new Random();
+        int index = random.Next(strings.Count);
+        if (!strings[index].GetHasBeenUsed())
+        {
+            strings[index].SetHasBeenUsed(true);
+            return strings[index].GetPrompt();
+        }
+        else
+        {
+            foreach (FlaggedString s in strings)
+            {
+                if (!s.GetHasBeenUsed())
+                {
+                    s.SetHasBeenUsed(true);
+                    return s.GetPrompt();
+                }
+            }
+            foreach (FlaggedString s in strings)
+            {
+                s.SetHasBeenUsed(false);
+            }
+            return strings[index].GetPrompt();
+        }
+        
+    }
+
+
 
 }
