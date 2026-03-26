@@ -7,6 +7,16 @@ class BreathingActivity : BaseActivity
         
     }
 
+    /// <summary>
+    /// Runs the activity.
+    /// </summary>
+    /// <remarks>
+    /// Clears the console and displays the greeting and description.
+    /// Then, it asks the user for the duration of the activity.
+    /// After that, it waits for 3 seconds and then starts the activity.
+    /// The activity consists of prompting the user to breathe in and out.
+    /// The activity ends after the set duration.
+    /// </remarks>
     public void RunActivity()
     {
         Console.Clear();

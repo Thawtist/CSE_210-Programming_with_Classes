@@ -72,6 +72,12 @@ class BaseActivity
         DisplaySpinner($"You have completed {_duration} seconds of the {_name} Activity", 3);
     }
 
+    /// <summary>
+    /// Displays a countdown from the given number of seconds,
+    /// prepending the given message.
+    /// </summary>
+    /// <param name="Message">The message to display before the countdown.</param>
+    /// <param name="seconds">The number of seconds to count down from.</param>
     public void RunCountDown(string Message, int seconds)
     {
         int countDown = seconds;

@@ -2,6 +2,10 @@ using System;
 
 class Menu
 {
+    /// <summary>
+    /// Displays the main menu and prompts the user to select an option.
+    /// </summary>
+    /// <returns>The selected option as an integer.</returns>
     public static int DisplayMenu()
     {
         Console.WriteLine("Menu Options:");

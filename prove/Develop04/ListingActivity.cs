@@ -27,6 +27,15 @@ class ListingActivity : BaseActivity
         SetPrompts();
     }
 
+/// <summary>
+/// Runs the ListingActivity.
+/// </summary>
+/// <remarks>
+/// Resets the prompts, displays the greeting and description, obtains the duration,
+/// clears the console, counts down from 3 seconds, displays the prompt, counts down from 5 seconds,
+/// starts the timer, counts the number of items the user enters until the timer expires,
+/// displays the number of items entered, and displays the ending message.
+/// </remarks>
     public void RunActivity()
     {
         Console.Clear();

@@ -2,6 +2,14 @@ using System;
 
 class Program
 {
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        /// <remarks>
+        /// This program will display a menu to the user and allow them to select
+        /// which activity to run. The activities include breathing exercises,
+        /// reflection, and listing positive things in their life.
+        /// </remarks>
     static void Main(string[] args)
     {
         // BreathingActivity breathingActivity = new BreathingActivity();
