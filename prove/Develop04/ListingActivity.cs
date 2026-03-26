@@ -36,8 +36,29 @@ class ListingActivity : BaseActivity
         DisplayDescription();
         ObtainDuration();
 
-        // TODO Display a countdown . . .
-        // TODO Finish program lol
-        
+        Console.Clear();
+        RunCountDown("\n\nGet ready", 3);
+
+        Console.Clear();
+
+        string prompt = GetPromptString(_prompts);
+        Console.WriteLine(prompt);
+
+        RunCountDown("\nYou may begin in: ", 5);
+
+        StartTimer();
+
+        int count = 0;
+
+        while (!HasTimerExpired())
+        {
+            Console.Write("> ");
+            Console.ReadLine();
+            count++;
+        }
+
+        Console.WriteLine($"\nYou listed {count} items!");
+
+        DisplayEnding();
     }
 }

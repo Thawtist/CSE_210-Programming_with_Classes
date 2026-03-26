@@ -4,9 +4,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        BreathingActivity breathingActivity = new BreathingActivity();
-        ReflectionActivity reflectionActivity = new ReflectionActivity();
-        ListingActivity listingActivity = new ListingActivity();
+        // BreathingActivity breathingActivity = new BreathingActivity();
+        // ReflectionActivity reflectionActivity = new ReflectionActivity();
+        // ListingActivity listingActivity = new ListingActivity();
+
+        BreathingActivity breathingActivity = new BreathingActivity(
+            "Breathing",
+            "This activity will help you relax by guiding your breathing."
+        );
+
+        ReflectionActivity reflectionActivity = new ReflectionActivity(
+            "Reflection",
+            "This activity helps you reflect on meaningful experiences."
+        );
+
+        ListingActivity listingActivity = new ListingActivity(
+            "Listing",
+            "This activity helps you list positive things in your life."
+        );
+
+
 
 
 

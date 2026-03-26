@@ -5,6 +5,7 @@ class ReflectionActivity : BaseActivity
 {
 
     private List<FlaggedString> _questions;
+    private List<FlaggedString> _prompts;
 
     private void SetPromptsAndQuestions()
     {

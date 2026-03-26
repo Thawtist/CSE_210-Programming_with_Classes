@@ -2,10 +2,16 @@ using System;
 
 class Menu
 {
-    // Menu Options
+    public static int DisplayMenu()
+    {
+        Console.WriteLine("Menu Options:");
+        Console.WriteLine("1. Breathing Activity");
+        Console.WriteLine("2. Reflection Activity");
+        Console.WriteLine("3. Listing Activity");
+        Console.WriteLine("4. Quit");
+        Console.Write("Select a choice: ");
 
-    // breathing
-    // listing
-    // reflecting
-
+        int choice = int.Parse(Console.ReadLine());
+        return choice;
+    }
 }
