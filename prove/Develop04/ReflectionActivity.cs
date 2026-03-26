@@ -1,7 +1,7 @@
 using System;
 
 
-class ReflectingActivity : BaseActivity
+class ReflectionActivity : BaseActivity
 {
 
     private List<FlaggedString> _questions;
