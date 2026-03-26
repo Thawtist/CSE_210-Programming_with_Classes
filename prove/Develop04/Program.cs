@@ -31,7 +31,7 @@ class Program
         int response = 0;
         while(response != 4)
         {
-            response = Menu.DiisplayMenu();
+            response = Menu.DisplayMenu();
 
             if(response == 1)
             {
