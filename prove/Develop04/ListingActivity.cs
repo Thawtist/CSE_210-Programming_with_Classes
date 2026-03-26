@@ -36,11 +36,8 @@ class ListingActivity : BaseActivity
         DisplayDescription();
         ObtainDuration();
 
-        // Display a countdown . . .
-
-
-
+        // TODO Display a countdown . . .
+        // TODO Finish program lol
         
-
     }
 }
