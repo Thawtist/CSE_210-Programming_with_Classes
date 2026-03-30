@@ -61,7 +61,7 @@ class ReflectionActivity : BaseActivity
         Console.Clear();
         
         Console.WriteLine(GetPromptString(_prompts));
-        Console.WriteLine("\nPress enter once you have something in mind.");
+        Console.WriteLine("\nPress enter once you have something in mind. You don't need to type anything for this activity.");
         Console.ReadLine();
 
 

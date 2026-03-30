@@ -70,6 +70,8 @@ class Program
         // breathingActivity.ObtainDuration();
         // breathingActivity.DisplaySpinner("Hey Bob", 4);
 
-        breathingActivity.RunActivity();
+        // breathingActivity.RunActivity();
+
+        Console.WriteLine("Goodbye!");
     }
 }

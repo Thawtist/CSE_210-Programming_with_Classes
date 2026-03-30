@@ -69,7 +69,7 @@ class BaseActivity
     public void DisplayEnding()
     {
         DisplaySpinner("\n\nWell done!", 2);
-        DisplaySpinner($"You have completed {_duration} seconds of the {_name} Activity", 3);
+        DisplaySpinner($"\nYou have completed {_duration} seconds of the {_name} Activity", 3);
     }
 
     /// <summary>
