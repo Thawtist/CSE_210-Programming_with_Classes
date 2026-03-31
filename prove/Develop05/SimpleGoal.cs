@@ -1,16 +1,27 @@
-
+using System;
+using System.IO;
 class SimpleGoal : Goal
 {
-    public SimpleGoal(): base()
+    public SimpleGoal(string name, string description, int points, bool status)
+        : base(name, description, points, status)
+    {
+        
+    }
+
+    public SimpleGoal() : base("", "", 0, false)
     {
         
     }
 
     public override void CreateGoal()
     {
-        base.SetName();
-        base.SetDescription();
-        base.SetPoints();
-        base.SetGoalType("Simple");
+        SetName();
+        SetDescription();
+        SetPoints();
+    }
+
+    public override int RecordEvent()
+    {
+        return MarkComplete();
     }
 }
