@@ -30,7 +30,7 @@ class Menu
             {
                 response = int.Parse(Console.ReadLine());
             }
-            catch (Exception ex)
+            catch // (Exception ex)
             {
                 Console.WriteLine("Input must be an integer between 1 and 6.");
             }

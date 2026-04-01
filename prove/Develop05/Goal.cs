@@ -71,11 +71,11 @@ abstract class Goal
 
     public virtual string GetConsoleString()
     {
-        string statusMarker = " ";
-        if (_status)
-        {
-            statusMarker = "X";
-        }
+        // string statusMarker = " ";
+        // if (_status)
+        // {
+        //     statusMarker = "X";
+        // }
         return $"Goal Information: {_name}, {_description}, {_numberOfPoints}, {_status}, {_goalType}";
     }
 
