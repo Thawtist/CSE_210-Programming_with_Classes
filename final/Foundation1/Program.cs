@@ -41,8 +41,8 @@ class Program
         // Video 4
         Video v4 = new Video("C# Generics", "Jane", 600);
         v4.AddComment(new Comment("Alice", "first"));
-        v4.AddComment(new Comment("Bob", "Great video!"));
-        v4.AddComment(new Comment("Charlie", "Very helpful"));
+        v4.AddComment(new Comment("Bill", "I liked it!"));
+        v4.AddComment(new Comment("George", "Nicely done!"));
         videos.Add(v4);
 
         // Display
