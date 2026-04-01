@@ -36,4 +36,14 @@ class Vector2D
         return v1.X != v2.X || v1.Y != v2.Y;
     }
 
+    public override bool Equals(Object? v1)
+    {
+        return (v1 as Vector2D)?.X == X && (v1 as Vector2D)?.Y == Y;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(X, Y);
+    }
+
 }
