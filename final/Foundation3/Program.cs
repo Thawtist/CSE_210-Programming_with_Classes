@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Clear();
+        
         Address addr1 = new Address("123 Main St", "Rexburg", "ID", "USA");
         Address addr2 = new Address("456 Center St", "Boise", "ID", "USA");
 
