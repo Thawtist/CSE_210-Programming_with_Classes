@@ -23,7 +23,9 @@ public class Order
             total += p.GetTotalCost();
         }
 
-        total += _customer.LivesInUSA() ? 5 : 35;
+        total += _customer.LivesInUSA()
+            ? Config.USA_SHIPPING
+            : Config.INTERNATIONAL_SHIPPING;
 
         return total;
     }
